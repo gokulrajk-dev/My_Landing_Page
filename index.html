@@ -635,53 +635,10 @@ footer{
 .sticky-bar-text{font-size:.9rem;color:rgba(250,246,239,.8)}
 .sticky-bar-text strong{color:var(--cream)}
 .sticky-bar-btn{
-  position:relative;
-  overflow:hidden;
-
-  background:var(--terracotta);
-  color:#fff;
-
-  font-weight:600;
-  font-size:.85rem;
-
-  padding:10px 22px;
-  border-radius:3px;
-
-  text-decoration:none;
-  white-space:nowrap;
-
-  transition:background .2s,transform .2s;
-}
-
-/* Glow Effect */
-.sticky-bar-btn::before{
-  content:"";
-
-  position:absolute;
-  top:0;
-  left:-100%;
-
-  width:100%;
-  height:100%;
-
-  background:linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.6),
-    transparent
-  );
-
-  transition:0.5s;
-}
-
-/* Hover Effect */
-.sticky-bar-btn:hover{
-  background:var(--terra-dark);
-  transform:translateY(-1px);
-}
-
-.sticky-bar-btn:hover::before{
-  left:100%;
+  background:var(--terracotta);color:#fff;
+  font-weight:600;font-size:.85rem;
+  padding:10px 22px;border-radius:3px;
+  text-decoration:none;white-space:nowrap;
 }
 
 /* ── WA BUTTON ── */
