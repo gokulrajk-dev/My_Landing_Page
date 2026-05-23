@@ -56,7 +56,13 @@ body{
 header{
   background:var(--cream);
   border-bottom:1px solid var(--border);
-  position:sticky;top:0;z-index:100;
+
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+
+  z-index:100;
   padding:0 6%;
 }
 .header-inner{
@@ -75,16 +81,56 @@ header{
 }
 .logo-text{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--ink);line-height:1.15}
 .logo-text small{display:block;font-size:.6rem;font-family:'Outfit',sans-serif;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+
 .header-cta{
-  background:var(--terracotta);color:#fff;
-  font-size:.82rem;font-weight:600;
-  padding:10px 22px;border-radius:3px;
-  text-decoration:none;letter-spacing:.04em;
+  position:relative;
+  overflow:hidden;
+
+  background:var(--terracotta);
+  color:#fff;
+
+  font-size:.82rem;
+  font-weight:600;
+
+  padding:10px 22px;
+  border-radius:3px;
+
+  text-decoration:none;
+  letter-spacing:.04em;
+
   transition:background .2s,transform .2s;
 }
-.header-cta:hover{background:var(--terra-dark);transform:translateY(-1px)}
 
-/* ── HERO ── */
+/* Glow Effect */
+.header-cta::before{
+  content:"";
+
+  position:absolute;
+  top:0;
+  left:-100%;
+
+  width:100%;
+  height:100%;
+
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+
+  transition:0.5s;
+}
+
+/* Hover Effects */
+.header-cta:hover{
+  background:var(--terra-dark);
+  transform:translateY(-1px);
+}
+
+.header-cta:hover::before{
+  left:100%;
+}
 .hero{
   min-height:92vh;
   display:grid;
@@ -172,9 +218,45 @@ header{
 
 /* hero right — stat card stack */
 .hero-visual{
-  display:flex;flex-direction:column;gap:16px;
+  display:flex;flex-direction:column;gap:14px;
   opacity:0;transform:translateX(30px);
   animation:slideL .9s .4s ease forwards;
+  min-width:0;
+  width:100%;
+  overflow:hidden;
+}
+
+@media(max-width:768px){
+
+  body{
+    overflow-x:hidden;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    padding:60px 20px;
+    min-height:auto;
+    gap:40px;
+    width:100%;
+    overflow:hidden;
+  }
+
+  .hero-left,
+  .hero-visual{
+    width:100%;
+    min-width:0;
+  }
+
+  .hero-visual{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .stat-strip,
+  .hero-badge{
+    width:100%;
+  }
 }
 @keyframes slideL{to{opacity:1;transform:translateX(0)}}
 .stat-strip{
@@ -553,10 +635,53 @@ footer{
 .sticky-bar-text{font-size:.9rem;color:rgba(250,246,239,.8)}
 .sticky-bar-text strong{color:var(--cream)}
 .sticky-bar-btn{
-  background:var(--terracotta);color:#fff;
-  font-weight:600;font-size:.85rem;
-  padding:10px 22px;border-radius:3px;
-  text-decoration:none;white-space:nowrap;
+  position:relative;
+  overflow:hidden;
+
+  background:var(--terracotta);
+  color:#fff;
+
+  font-weight:600;
+  font-size:.85rem;
+
+  padding:10px 22px;
+  border-radius:3px;
+
+  text-decoration:none;
+  white-space:nowrap;
+
+  transition:background .2s,transform .2s;
+}
+
+/* Glow Effect */
+.sticky-bar-btn::before{
+  content:"";
+
+  position:absolute;
+  top:0;
+  left:-100%;
+
+  width:100%;
+  height:100%;
+
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+
+  transition:0.5s;
+}
+
+/* Hover Effect */
+.sticky-bar-btn:hover{
+  background:var(--terra-dark);
+  transform:translateY(-1px);
+}
+
+.sticky-bar-btn:hover::before{
+  left:100%;
 }
 
 /* ── WA BUTTON ── */
