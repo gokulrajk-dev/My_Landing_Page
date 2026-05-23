@@ -22,13 +22,15 @@
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
 
 body{
   background:var(--cream);
   color:var(--ink);
   font-family:'Outfit','Noto Sans Tamil',sans-serif;
   overflow-x:hidden;
+  max-width:100vw;
+  width:100%;
 }
 
 /* ── TICKER BAR ── */
@@ -40,6 +42,8 @@ body{
   padding:10px 0;
   overflow:hidden;
   white-space:nowrap;
+  max-width:100%;
+  width:100%;
 }
 .ticker-inner{
   display:inline-block;
@@ -91,6 +95,7 @@ header{
   position:relative;
   overflow:hidden;
   background:var(--cream);
+  width:100%;
 }
 .hero::before{
   content:'';
@@ -201,7 +206,7 @@ header{
 .hero-badge-text strong{display:block;font-size:1.05rem}
 
 /* ── SECTION BASE ── */
-section{padding:96px 6%}
+section{padding:96px 6%;width:100%;overflow-x:hidden}
 .s-tag{
   font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
   color:var(--terracotta);margin-bottom:12px;
@@ -580,6 +585,7 @@ footer{
 /* ── RESPONSIVE ── */
 @media(max-width:768px){
   .hero{grid-template-columns:1fr;padding:60px 5%;min-height:auto;gap:40px}
+  .hero::before{width:250px;height:250px;right:-60px;top:-40px}
   .hero-visual{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .hero-badge{grid-column:1/-1}
   .header-inner{height:60px}
@@ -587,9 +593,23 @@ footer{
   .footer-bottom{flex-direction:column;text-align:center}
   .form-row{grid-template-columns:1fr}
   .motive-strip{padding:40px 5%}
+  .problems-grid{grid-template-columns:1fr}
+  .courses-grid{grid-template-columns:1fr}
+  .results-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr;gap:36px}
+  .usp-section{grid-template-columns:1fr;gap:48px;padding:60px 5%}
+  .usp-visual{grid-template-columns:1fr 1fr}
+  .form-section{grid-template-columns:1fr;gap:40px;padding:60px 5% !important}
+  .form-card{position:static;padding:28px 20px}
+  .form-card-head{margin:-28px -20px 24px;padding:24px 20px}
+  section{padding:60px 5%}
+  .faq-inner{margin:36px 0 0}
 }
 @media(max-width:480px){
   .hero-visual{grid-template-columns:1fr}
+  .usp-visual{grid-template-columns:1fr 1fr}
+  .stat-strip{padding:16px 18px}
+  .stat-strip-num{font-size:1.8rem}
 }
 </style>
 </head>
@@ -598,12 +618,12 @@ footer{
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-inner">
-    🏛️ New Batch Starting June 2026 — Limited Seats Available &nbsp;
+    🏛️ New Batch Starting June 2025 — Limited Seats Available &nbsp;
     <span>|</span>&nbsp; 📞 Call: 99403 32851 &nbsp;
     <span>|</span>&nbsp; Tamil & English Medium Available &nbsp;
     <span>|</span>&nbsp; 1200+ Students Selected &nbsp;
     <span>|</span>&nbsp; 0% EMI Available &nbsp;
-    <span>|</span>&nbsp; 🏛️ New Batch Starting June 2026 — Limited Seats Available &nbsp;
+    <span>|</span>&nbsp; 🏛️ New Batch Starting June 2025 — Limited Seats Available &nbsp;
     <span>|</span>&nbsp; 📞 Call: 99403 32851 &nbsp;
     <span>|</span>&nbsp; Tamil & English Medium Available &nbsp;
     <span>|</span>&nbsp; 1200+ Students Selected &nbsp;
