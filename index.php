@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>EVA Stalin IAS Academy – IAS கனவை நனவாக்குவோம்</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink: #1A1410;
+  --cream: #FAF6EF;
+  --sand: #F0E8D8;
+  --terracotta: #B85C38;
+  --terra-dark: #8C3D22;
+  --terra-light: #E8846A;
+  --olive: #5C6B3A;
+  --gold: #C9963B;
+  --muted: #7A6E64;
+  --border: #E2D9CC;
+  --white: #FFFFFF;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Outfit','Noto Sans Tamil',sans-serif;
+  overflow-x:hidden;
+}
+
+/* ── TICKER BAR ── */
+.ticker{
+  background:var(--ink);
+  color:var(--cream);
+  font-size:.78rem;
+  letter-spacing:.08em;
+  padding:10px 0;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.ticker-inner{
+  display:inline-block;
+  animation:ticker 22s linear infinite;
+}
+.ticker-inner span{margin:0 40px;color:var(--terra-light)}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── HEADER ── */
+header{
+  background:var(--cream);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:100;
+  padding:0 6%;
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;
+}
+.logo-wrap{display:flex;align-items:center;gap:12px}
+.logo-mark{
+  width:44px;height:44px;
+  background:var(--terracotta);
+  border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;font-weight:700;color:#fff;
+  letter-spacing:-.02em;
+}
+.logo-text{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--ink);line-height:1.15}
+.logo-text small{display:block;font-size:.6rem;font-family:'Outfit',sans-serif;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.header-cta{
+  background:var(--terracotta);color:#fff;
+  font-size:.82rem;font-weight:600;
+  padding:10px 22px;border-radius:3px;
+  text-decoration:none;letter-spacing:.04em;
+  transition:background .2s,transform .2s;
+}
+.header-cta:hover{background:var(--terra-dark);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{
+  min-height:92vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:80px 6%;
+  gap:60px;
+  position:relative;
+  overflow:hidden;
+  background:var(--cream);
+}
+.hero::before{
+  content:'';
+  position:absolute;right:-120px;top:-80px;
+  width:500px;height:500px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(184,92,56,.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-label{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(184,92,56,.1);
+  border:1px solid rgba(184,92,56,.25);
+  color:var(--terracotta);
+  font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  padding:6px 14px;border-radius:2px;
+  margin-bottom:24px;
+  opacity:0;transform:translateY(16px);
+  animation:rise .7s .1s ease forwards;
+}
+.hero-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--terracotta);animation:blink 1.4s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.8rem,4.5vw,5rem);
+  line-height:1.08;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:10px;
+  opacity:0;transform:translateY(20px);
+  animation:rise .8s .2s ease forwards;
+}
+.hero h1 em{font-style:italic;color:var(--terracotta)}
+.hero-tamil{
+  font-family:'Noto Sans Tamil',sans-serif;
+  font-size:1rem;color:var(--muted);
+  margin-bottom:28px;
+  padding-left:16px;
+  border-left:2px solid var(--gold);
+  opacity:0;transform:translateY(16px);
+  animation:rise .8s .35s ease forwards;
+}
+.hero-desc{
+  font-size:1.05rem;color:var(--muted);
+  line-height:1.8;max-width:460px;
+  margin-bottom:36px;
+  opacity:0;transform:translateY(16px);
+  animation:rise .8s .45s ease forwards;
+}
+.hero-actions{
+  display:flex;gap:14px;flex-wrap:wrap;
+  opacity:0;transform:translateY(16px);
+  animation:rise .8s .55s ease forwards;
+}
+.btn-fill{
+  background:var(--terracotta);color:#fff;
+  font-weight:600;font-size:.95rem;
+  padding:14px 30px;border-radius:3px;
+  text-decoration:none;
+  transition:background .2s,transform .2s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-fill:hover{background:var(--terra-dark);transform:translateY(-2px)}
+.btn-outline{
+  border:1.5px solid var(--ink);color:var(--ink);
+  font-weight:500;font-size:.95rem;
+  padding:14px 28px;border-radius:3px;
+  text-decoration:none;
+  transition:background .2s,color .2s;
+}
+.btn-outline:hover{background:var(--ink);color:var(--cream)}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+
+/* hero right — stat card stack */
+.hero-visual{
+  display:flex;flex-direction:column;gap:16px;
+  opacity:0;transform:translateX(30px);
+  animation:slideL .9s .4s ease forwards;
+}
+@keyframes slideL{to{opacity:1;transform:translateX(0)}}
+.stat-strip{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:24px 28px;
+  display:flex;align-items:center;gap:20px;
+}
+.stat-strip-icon{
+  width:48px;height:48px;border-radius:6px;
+  background:var(--sand);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;flex-shrink:0;
+}
+.stat-strip-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.2rem;font-weight:700;color:var(--terracotta);line-height:1;
+}
+.stat-strip-label{font-size:.78rem;color:var(--muted);letter-spacing:.06em;margin-top:2px}
+
+.hero-badge{
+  background:var(--terracotta);color:#fff;
+  border-radius:8px;padding:20px 28px;
+  display:flex;align-items:center;gap:16px;
+}
+.hero-badge-icon{font-size:2rem}
+.hero-badge-text{font-size:.92rem;line-height:1.5}
+.hero-badge-text strong{display:block;font-size:1.05rem}
+
+/* ── SECTION BASE ── */
+section{padding:96px 6%}
+.s-tag{
+  font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--terracotta);margin-bottom:12px;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.s-tag::before{content:'';width:20px;height:2px;background:var(--terracotta)}
+.s-head{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,3.5vw,3.2rem);
+  font-weight:700;line-height:1.15;
+  color:var(--ink);margin-bottom:16px;
+}
+.s-head em{font-style:italic;color:var(--terracotta)}
+.s-sub{font-size:1rem;color:var(--muted);line-height:1.75;max-width:540px}
+
+/* ── PROBLEM SECTION ── */
+.problem-section{background:var(--ink)}
+.problem-section .s-tag{color:var(--terra-light)}
+.problem-section .s-head{color:var(--cream)}
+.problem-section .s-sub{color:rgba(250,246,239,.6)}
+.problems-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1px;margin-top:56px;
+  border:1px solid rgba(255,255,255,.06);border-radius:2px;
+  overflow:hidden;
+}
+.prob-card{
+  background:rgba(255,255,255,.03);
+  padding:32px 28px;
+  border:1px solid rgba(255,255,255,.05);
+  transition:background .3s;
+  position:relative;overflow:hidden;
+}
+.prob-card::after{
+  content:'';
+  position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--terracotta),transparent);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .4s ease;
+}
+.prob-card:hover{background:rgba(255,255,255,.06)}
+.prob-card:hover::after{transform:scaleX(1)}
+.prob-no{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3rem;font-weight:700;
+  color:rgba(184,92,56,.2);
+  line-height:1;margin-bottom:12px;
+}
+.prob-card h3{font-size:.95rem;font-weight:600;color:var(--cream);margin-bottom:8px}
+.prob-card p{font-size:.85rem;color:rgba(250,246,239,.5);line-height:1.65}
+
+/* ── MOTIVATION STRIP ── */
+.motive-strip{
+  background:var(--terracotta);
+  padding:56px 6%;
+  display:flex;align-items:center;justify-content:center;
+  gap:40px;flex-wrap:wrap;text-align:center;
+}
+.motive-strip p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,3vw,2.4rem);
+  font-weight:600;color:#fff;
+  line-height:1.3;max-width:760px;
+}
+.motive-strip p em{font-style:italic;opacity:.85}
+
+/* ── COURSES ── */
+.courses-section{background:var(--sand)}
+.courses-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:24px;margin-top:52px;
+}
+.course-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:8px;overflow:hidden;
+  transition:transform .3s,box-shadow .3s;
+}
+.course-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.1)}
+.course-card-top{
+  height:6px;
+  background:linear-gradient(90deg,var(--terracotta),var(--gold));
+}
+.course-card-body{padding:28px}
+.course-pill{
+  display:inline-block;
+  background:rgba(184,92,56,.1);color:var(--terracotta);
+  font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  padding:4px 12px;border-radius:2px;margin-bottom:16px;
+}
+.course-card h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:10px;
+}
+.course-card p{font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:20px}
+.course-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+.course-features li{
+  font-size:.82rem;color:var(--ink);
+  display:flex;align-items:center;gap:8px;
+}
+.course-features li::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--olive);flex-shrink:0;
+}
+.course-cta{
+  display:block;text-align:center;
+  border:1.5px solid var(--ink);color:var(--ink);
+  font-weight:600;font-size:.85rem;
+  padding:11px;border-radius:3px;text-decoration:none;
+  transition:background .2s,color .2s;
+}
+.course-cta:hover{background:var(--ink);color:var(--cream)}
+
+/* ── USP / WHY US ── */
+.usp-section{
+  background:var(--cream);
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+}
+@media(max-width:768px){.usp-section{grid-template-columns:1fr;gap:48px}}
+.usp-visual{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
+}
+.usp-tile{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:8px;padding:24px 20px;text-align:center;
+}
+.usp-tile.accent{background:var(--terracotta)}
+.usp-tile.accent .usp-tile-num{color:#fff}
+.usp-tile.accent .usp-tile-label{color:rgba(255,255,255,.75)}
+.usp-tile-icon{font-size:1.8rem;margin-bottom:8px}
+.usp-tile-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.4rem;font-weight:700;color:var(--terracotta);line-height:1;
+}
+.usp-tile.accent .usp-tile-num{color:#fff}
+.usp-tile-label{font-size:.74rem;color:var(--muted);letter-spacing:.08em;margin-top:4px}
+
+.usp-list{display:flex;flex-direction:column;gap:0}
+.usp-item{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:22px 0;
+  border-bottom:1px solid var(--border);
+}
+.usp-item:last-child{border-bottom:none}
+.usp-icon{
+  width:40px;height:40px;border-radius:6px;
+  background:var(--sand);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;margin-top:2px;
+}
+.usp-item h4{font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:4px}
+.usp-item p{font-size:.83rem;color:var(--muted);line-height:1.6}
+
+/* ── RESULTS / SUCCESS ── */
+.results-section{background:var(--ink)}
+.results-section .s-tag{color:var(--terra-light)}
+.results-section .s-head{color:var(--cream)}
+.results-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;margin-top:52px;
+}
+.result-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:8px;padding:28px;
+  position:relative;overflow:hidden;
+  transition:border-color .3s;
+}
+.result-card:hover{border-color:rgba(184,92,56,.4)}
+.result-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3.5rem;color:rgba(184,92,56,.2);
+  line-height:.8;margin-bottom:12px;
+}
+.result-text{font-size:.9rem;color:rgba(250,246,239,.75);line-height:1.7;margin-bottom:20px}
+.result-person{display:flex;align-items:center;gap:12px}
+.result-avatar{
+  width:40px;height:40px;border-radius:50%;
+  background:linear-gradient(135deg,var(--terra-dark),var(--gold));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:.85rem;color:#fff;flex-shrink:0;
+}
+.result-name{font-weight:600;font-size:.88rem;color:var(--cream)}
+.result-role{font-size:.75rem;color:var(--terra-light)}
+.stars{color:var(--gold);font-size:.8rem;margin-bottom:10px}
+
+/* ── LEAD FORM ── */
+.form-section{
+  background:var(--sand);
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:start;
+}
+@media(max-width:768px){.form-section{grid-template-columns:1fr;gap:48px}}
+.form-left-steps{display:flex;flex-direction:column;gap:0;margin-top:40px}
+.step-item{
+  display:flex;gap:16px;
+  padding:20px 0;border-bottom:1px solid var(--border);
+}
+.step-item:last-child{border-bottom:none}
+.step-num{
+  width:32px;height:32px;border-radius:50%;
+  background:var(--terracotta);color:#fff;
+  font-weight:700;font-size:.85rem;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:2px;
+}
+.step-item h4{font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:3px}
+.step-item p{font-size:.83rem;color:var(--muted);line-height:1.5}
+
+.form-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:10px;padding:40px;
+  position:sticky;top:90px;
+}
+.form-card-head{
+  background:var(--terracotta);
+  margin:-40px -40px 32px;
+  padding:28px 40px;
+  border-radius:10px 10px 0 0;
+}
+.form-card-head h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:4px;
+}
+.form-card-head p{font-size:.85rem;color:rgba(255,255,255,.75)}
+.form-group{margin-bottom:16px}
+.form-group label{
+  display:block;font-size:.72rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:7px;
+}
+.form-group input,
+.form-group select{
+  width:100%;
+  border:1.5px solid var(--border);
+  border-radius:5px;
+  background:var(--cream);
+  font-family:'Outfit','Noto Sans Tamil',sans-serif;
+  font-size:.92rem;color:var(--ink);
+  padding:12px 14px;
+  outline:none;
+  transition:border-color .2s,background .2s;
+}
+.form-group input:focus,
+.form-group select:focus{border-color:var(--terracotta);background:#fff}
+.form-group select option{background:#fff}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.submit-btn{
+  width:100%;border:none;cursor:pointer;
+  background:var(--terracotta);color:#fff;
+  font-family:'Outfit',sans-serif;
+  font-weight:700;font-size:1rem;
+  padding:15px;border-radius:5px;
+  margin-top:8px;
+  transition:background .2s,transform .2s;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.submit-btn:hover{background:var(--terra-dark);transform:translateY(-1px)}
+.form-note{font-size:.72rem;color:var(--muted);text-align:center;margin-top:12px}
+
+/* success state */
+#form-success{
+  display:none;text-align:center;
+  padding:24px;background:rgba(92,107,58,.08);
+  border:1px solid rgba(92,107,58,.3);
+  border-radius:8px;margin-top:16px;
+}
+
+/* ── FAQ ── */
+.faq-section{background:var(--cream)}
+.faq-inner{max-width:700px;margin:52px auto 0}
+.faq-item{
+  border-bottom:1px solid var(--border);
+  padding:20px 0;cursor:pointer;
+}
+.faq-q{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.97rem;font-weight:500;color:var(--ink);gap:16px;
+}
+.faq-toggle{
+  width:28px;height:28px;border-radius:50%;
+  border:1.5px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;color:var(--muted);flex-shrink:0;
+  transition:background .2s,border-color .2s,transform .3s;
+}
+.faq-item.open .faq-toggle{
+  background:var(--terracotta);border-color:var(--terracotta);color:#fff;
+  transform:rotate(45deg);
+}
+.faq-a{
+  font-size:.88rem;color:var(--muted);line-height:1.75;
+  max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;
+}
+.faq-item.open .faq-a{max-height:200px;padding-top:14px}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);
+  padding:60px 6% 30px;
+}
+.footer-inner{
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  gap:60px;padding-bottom:48px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+@media(max-width:768px){.footer-inner{grid-template-columns:1fr;gap:36px}}
+.footer-brand-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.6rem;font-weight:700;color:var(--cream);margin-bottom:10px;
+}
+.footer-brand-desc{font-size:.85rem;color:rgba(250,246,239,.45);line-height:1.7;max-width:280px}
+.footer-contact{margin-top:20px}
+.footer-contact a{
+  display:flex;align-items:center;gap:8px;
+  font-size:.85rem;color:var(--terra-light);text-decoration:none;margin-bottom:8px;
+}
+.footer-col h5{font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,246,239,.35);margin-bottom:16px}
+.footer-col a{
+  display:block;font-size:.85rem;color:rgba(250,246,239,.55);
+  text-decoration:none;margin-bottom:10px;
+  transition:color .2s;
+}
+.footer-col a:hover{color:var(--terra-light)}
+.footer-bottom{
+  padding-top:24px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:12px;
+}
+.footer-copy{font-size:.75rem;color:rgba(250,246,239,.2)}
+
+/* ── STICKY BOTTOM BAR ── */
+.sticky-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:200;
+  background:var(--ink);
+  border-top:1px solid rgba(255,255,255,.1);
+  padding:12px 6%;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  transform:translateY(100%);transition:transform .4s ease;
+}
+.sticky-bar.show{transform:translateY(0)}
+.sticky-bar-text{font-size:.9rem;color:rgba(250,246,239,.8)}
+.sticky-bar-text strong{color:var(--cream)}
+.sticky-bar-btn{
+  background:var(--terracotta);color:#fff;
+  font-weight:600;font-size:.85rem;
+  padding:10px 22px;border-radius:3px;
+  text-decoration:none;white-space:nowrap;
+}
+
+/* ── WA BUTTON ── */
+.wa-btn{
+  position:fixed;bottom:76px;right:20px;z-index:300;
+  width:54px;height:54px;border-radius:50%;
+  background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;text-decoration:none;
+  box-shadow:0 4px 20px rgba(37,211,102,.4);
+  animation:wa-pulse 2s infinite;
+  transition:transform .2s;
+}
+.wa-btn:hover{transform:scale(1.1)}
+@keyframes wa-pulse{
+  0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}
+  50%{box-shadow:0 4px 30px rgba(37,211,102,.7)}
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;padding:60px 5%;min-height:auto;gap:40px}
+  .hero-visual{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .hero-badge{grid-column:1/-1}
+  .header-inner{height:60px}
+  .sticky-bar-text{font-size:.8rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .form-row{grid-template-columns:1fr}
+  .motive-strip{padding:40px 5%}
+}
+@media(max-width:480px){
+  .hero-visual{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    🏛️ New Batch Starting June 2026 — Limited Seats Available &nbsp;
+    <span>|</span>&nbsp; 📞 Call: 99403 32851 &nbsp;
+    <span>|</span>&nbsp; Tamil & English Medium Available &nbsp;
+    <span>|</span>&nbsp; 1200+ Students Selected &nbsp;
+    <span>|</span>&nbsp; 0% EMI Available &nbsp;
+    <span>|</span>&nbsp; 🏛️ New Batch Starting June 2026 — Limited Seats Available &nbsp;
+    <span>|</span>&nbsp; 📞 Call: 99403 32851 &nbsp;
+    <span>|</span>&nbsp; Tamil & English Medium Available &nbsp;
+    <span>|</span>&nbsp; 1200+ Students Selected &nbsp;
+    <span>|</span>&nbsp; 0% EMI Available &nbsp;
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <div class="logo-mark">EVA</div>
+      <div class="logo-text">
+        Stalin IAS Academy
+        <small>Chennai · Est. 2009</small>
+      </div>
+    </div>
+    <a href="#enroll" class="header-cta">Free Counselling →</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-label">⬤ Batch Enrollment Open</div>
+    <h1>உங்கள் IAS கனவு<br/><em>இனி உண்மையாகும்</em></h1>
+    <p class="hero-tamil">தேர்வு கடினம் — ஆனால் சரியான வழிகாட்டலுடன் நீங்கள் வெல்வீர்கள்.</p>
+    <p class="hero-desc">Expert faculty, personalized mentorship, and a proven system that has sent 1,200+ students into the civil services. Your journey begins here.</p>
+    <div class="hero-actions">
+      <a href="#enroll" class="btn-fill">🎯 Free Counselling Book பண்ணுங்க</a>
+      <a href="#courses" class="btn-outline">Courses பாருங்க</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="stat-strip">
+      <div class="stat-strip-icon">🏆</div>
+      <div>
+        <div class="stat-strip-num">1,200+</div>
+        <div class="stat-strip-label">Students Selected</div>
+      </div>
+    </div>
+    <div class="stat-strip">
+      <div class="stat-strip-icon">📈</div>
+      <div>
+        <div class="stat-strip-num">94%</div>
+        <div class="stat-strip-label">Pass Rate</div>
+      </div>
+    </div>
+    <div class="stat-strip">
+      <div class="stat-strip-icon">🎓</div>
+      <div>
+        <div class="stat-strip-num">16+</div>
+        <div class="stat-strip-label">Years Experience</div>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-icon">👨‍🏫</div>
+      <div class="hero-badge-text">
+        <strong>30+ Expert Faculty</strong>
+        Former IAS/IPS officers & subject specialists teaching you directly.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM SECTION -->
+<section class="problem-section">
+  <div style="text-align:center;max-width:580px;margin:0 auto;">
+    <p class="s-tag">Problem</p>
+    <h2 class="s-head">பல Students IAS-ல<br/><em>தோல்வியடைவதேன்?</em></h2>
+    <p class="s-sub" style="margin:0 auto;color:rgba(250,246,239,.55)">இந்த 6 தவறுகள் உங்கள் UPSC கனவை முடக்கும் — ஆனால் நாங்கள் ஒவ்வொன்றுக்கும் தீர்வு கொண்டிருக்கிறோம்.</p>
+  </div>
+  <div class="problems-grid reveal">
+    <div class="prob-card">
+      <div class="prob-no">01</div>
+      <h3>Proper Guidance இல்லை</h3>
+      <p>எந்த topic முக்கியம், எங்கிருந்து start பண்றது என்று தெரியாமல் நேரம் வீணாகிறது.</p>
+    </div>
+    <div class="prob-card">
+      <div class="prob-no">02</div>
+      <h3>Current Affairs Ignore</h3>
+      <p>Prelims & Mains-ல current affairs மிக முக்கியம் — பலர் properly cover பண்றதில்லை.</p>
+    </div>
+    <div class="prob-card">
+      <div class="prob-no">03</div>
+      <h3>Answer Writing இல்லை</h3>
+      <p>Knowledge இருந்தும் structured answers எழுதத் தெரியாமல் marks வராமல் போகிறது.</p>
+    </div>
+    <div class="prob-card">
+      <div class="prob-no">04</div>
+      <h3>Mock Tests Skip</h3>
+      <p>Real exam feel இல்லாமல் practice பண்றது actual exam-ல pressure handle ஆகாமல் விடும்.</p>
+    </div>
+    <div class="prob-card">
+      <div class="prob-no">05</div>
+      <h3>Motivation குறைகிறது</h3>
+      <p>2–3 வருட journey-ல alone feel ஆகி, peer group இல்லாமல் dropout ஆகிவிடுகின்றனர்.</p>
+    </div>
+    <div class="prob-card">
+      <div class="prob-no">06</div>
+      <h3>Wrong Study Material</h3>
+      <p>Internet-ல நிறைய resources இருக்கு — UPSC-க்கு specific material எது என்று தெரியாது.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MOTIVATION STRIP -->
+<div class="motive-strip">
+  <p>"IAS தேர்வு கடினமானது — ஆனால் சரியான தயாரிப்புடன், <em>நீங்களும் வெல்லலாம்.</em> 16 வருடங்களில் 1,200+ students அதை நிரூபித்திருக்கிறார்கள்."</p>
+</div>
+
+<!-- COURSES -->
+<section class="courses-section" id="courses">
+  <p class="s-tag">Programs</p>
+  <h2 class="s-head">உங்கள் தேவைக்கேற்ற<br/><em>Course தேர்வு பண்ணுங்க</em></h2>
+  <div class="courses-grid">
+    <div class="course-card reveal">
+      <div class="course-card-top"></div>
+      <div class="course-card-body">
+        <div class="course-pill">Most Popular</div>
+        <h3>Complete IAS Program</h3>
+        <p>Prelims முதல் Interview வரை — full end-to-end preparation. Tamil & English medium available.</p>
+        <ul class="course-features">
+          <li>500+ Hours Live Classes</li>
+          <li>Daily Current Affairs Notes</li>
+          <li>300+ Mock Tests (Prelims & Mains)</li>
+          <li>Weekly Answer Writing Sessions</li>
+          <li>5 Mock Interview Sessions</li>
+          <li>Printed Study Material</li>
+          <li>Hostel Facility (Optional)</li>
+        </ul>
+        <a href="#enroll" class="course-cta">Counselling Book பண்ணுங்க</a>
+      </div>
+    </div>
+    <div class="course-card reveal">
+      <div class="course-card-top" style="background:linear-gradient(90deg,var(--olive),var(--gold))"></div>
+      <div class="course-card-body">
+        <div class="course-pill" style="background:rgba(92,107,58,.1);color:var(--olive)">Online Batch</div>
+        <h3>Online IAS Program</h3>
+        <p>Tamil Nadu வெளியே இருப்பவர்களுக்கும், working professionals-க்கும் special online batches.</p>
+        <ul class="course-features">
+          <li>Live + Recorded Sessions</li>
+          <li>Weekend & Evening Batches</li>
+          <li>Digital Study Material</li>
+          <li>Online Mock Tests</li>
+          <li>Personal Mentor Assigned</li>
+          <li>WhatsApp Doubt Support</li>
+        </ul>
+        <a href="#enroll" class="course-cta" style="border-color:var(--olive);color:var(--olive)">Counselling Book பண்ணுங்க</a>
+      </div>
+    </div>
+    <div class="course-card reveal">
+      <div class="course-card-top" style="background:linear-gradient(90deg,var(--gold),var(--terracotta))"></div>
+      <div class="course-card-body">
+        <div class="course-pill" style="background:rgba(201,150,59,.1);color:var(--gold)">Crash Course</div>
+        <h3>Prelims Crash Program</h3>
+        <p>Prelims-க்கு 3-4 மாதம் மட்டும் தயாரிக்க விரும்புவோருக்கான intensive program.</p>
+        <ul class="course-features">
+          <li>200+ Prelims Mock Tests</li>
+          <li>CSAT Special Coaching</li>
+          <li>Topic-wise Previous Papers</li>
+          <li>Rapid Revision Sessions</li>
+          <li>Daily Practice Questions</li>
+          <li>One-on-one Doubt Sessions</li>
+        </ul>
+        <a href="#enroll" class="course-cta" style="border-color:var(--gold);color:var(--gold)">Counselling Book பண்ணுங்க</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US / USP -->
+<section class="usp-section" style="padding:96px 6%">
+  <div class="usp-visual reveal-left">
+    <div class="usp-tile accent">
+      <div class="usp-tile-icon">🏛️</div>
+      <div class="usp-tile-num">16+</div>
+      <div class="usp-tile-label" style="color:rgba(255,255,255,.7)">Years of Excellence</div>
+    </div>
+    <div class="usp-tile">
+      <div class="usp-tile-icon">🎓</div>
+      <div class="usp-tile-num">1,200+</div>
+      <div class="usp-tile-label">Students Selected</div>
+    </div>
+    <div class="usp-tile">
+      <div class="usp-tile-icon">📝</div>
+      <div class="usp-tile-num">300+</div>
+      <div class="usp-tile-label">Mock Tests</div>
+    </div>
+    <div class="usp-tile accent">
+      <div class="usp-tile-icon">👨‍🏫</div>
+      <div class="usp-tile-num">30+</div>
+      <div class="usp-tile-label" style="color:rgba(255,255,255,.7)">Expert Faculty</div>
+    </div>
+  </div>
+  <div class="reveal">
+    <p class="s-tag">Why Us</p>
+    <h2 class="s-head">ஏன் Eva Stalin IAS Academy<br/><em>தேர்வு செய்ய வேண்டும்?</em></h2>
+    <div class="usp-list">
+      <div class="usp-item">
+        <div class="usp-icon">🎯</div>
+        <div>
+          <h4>Proven Track Record</h4>
+          <p>16 வருடங்களில் 1,200+ selections — எந்த coaching-உம் match பண்ண முடியாத result.</p>
+        </div>
+      </div>
+      <div class="usp-item">
+        <div class="usp-icon">🗣️</div>
+        <div>
+          <h4>Tamil Medium Available</h4>
+          <p>Tamil medium students-க்கு separate batches, Tamil notes, Tamil-ல full coaching கொடுக்கிறோம்.</p>
+        </div>
+      </div>
+      <div class="usp-item">
+        <div class="usp-icon">🤝</div>
+        <div>
+          <h4>Personal Mentorship</h4>
+          <p>ஒவ்வொரு student-உக்கும் dedicated mentor. Study plan தயாரிப்பு முதல் interview வரை support.</p>
+        </div>
+      </div>
+      <div class="usp-item">
+        <div class="usp-icon">📱</div>
+        <div>
+          <h4>Lifetime Access to Recordings</h4>
+          <p>Miss ஆன classes-ஐ anytime, anywhere access. Video library எப்போதும் available.</p>
+        </div>
+      </div>
+      <div class="usp-item">
+        <div class="usp-icon">💰</div>
+        <div>
+          <h4>0% EMI — No Cost</h4>
+          <p>6–12 months 0% interest EMI option. Financial constraint உன்னை stop பண்ண வேண்டியதில்லை.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS / TESTIMONIALS -->
+<section class="results-section">
+  <div style="text-align:center;max-width:540px;margin:0 auto;">
+    <p class="s-tag">Success Stories</p>
+    <h2 class="s-head" style="color:var(--cream)">நம் Students-ன் <em style="color:var(--terra-light)">வெற்றிக் கதைகள்</em></h2>
+  </div>
+  <div class="results-grid">
+    <div class="result-card reveal">
+      <div class="stars">★★★★★</div>
+      <div class="result-quote">"</div>
+      <p class="result-text">Eva Stalin IAS Academy-ல சேர்ந்த பிறகுதான் என் preparation structured ஆச்சு. Answer writing program என்னோட Mains score-ஐ completely மாத்துச்சு. First attempt-லயே select ஆனேன்!</p>
+      <div class="result-person">
+        <div class="result-avatar">AK</div>
+        <div>
+          <div class="result-name">Arun Kumar</div>
+          <div class="result-role">IAS 2024 — Chennai</div>
+        </div>
+      </div>
+    </div>
+    <div class="result-card reveal">
+      <div class="stars">★★★★★</div>
+      <div class="result-quote">"</div>
+      <p class="result-text">Current affairs module மிகவும் best. Daily notes useful ஆ இருக்கு. Faculty எல்லாரும் subject experts — doubt-க்கு always available. First attempt-லயே Prelims qualify பண்ணினேன்.</p>
+      <div class="result-person">
+        <div class="result-avatar">SP</div>
+        <div>
+          <div class="result-name">Supriya Priya</div>
+          <div class="result-role">IPS 2023 — Coimbatore</div>
+        </div>
+      </div>
+    </div>
+    <div class="result-card reveal">
+      <div class="stars">★★★★★</div>
+      <div class="result-quote">"</div>
+      <p class="result-text">Tamil medium student-ஆ இருந்தாலும் பயப்பட வேண்டியதில்லை. Tamil-ல notes, Tamil-ல classes — என்னோட IAS கனவு நனவானது இங்கேதான். இது என் life change பண்ணது.</p>
+      <div class="result-person">
+        <div class="result-avatar">MR</div>
+        <div>
+          <div class="result-name">Muthukumar Raja</div>
+          <div class="result-role">IAS 2022 — Madurai</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD FORM -->
+<section class="form-section" id="enroll" style="padding:96px 6%">
+  <div class="form-left">
+    <p class="s-tag">Free Counselling</p>
+    <h2 class="s-head">இன்றே உங்கள்<br/><em>Journey தொடங்குங்க</em></h2>
+    <p class="s-sub">Our expert counsellor உங்கள் background, goals-ஐ அலசி, perfect study plan suggest பண்றார். Completely free, no obligation.</p>
+    <div class="form-left-steps">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div>
+          <h4>Form Submit பண்ணுங்க</h4>
+          <p>உங்கள் basic details fill பண்ணுங்க — 2 நிமிடம் மட்டுமே ஆகும்.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div>
+          <h4>Counsellor Call பண்ணுவாங்க</h4>
+          <p>24 மணி நேரத்தில் எங்கள் expert உங்களை contact பண்றாங்க.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div>
+          <h4>Free Study Plan பெறுங்க</h4>
+          <p>Personalized roadmap, free study kit worth ₹3,999 — எதுவும் charge இல்லை.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div>
+          <h4>IAS Journey Start!</h4>
+          <p>Batch-ல join பண்ணி, 1,200+ successful students-ன் list-ல உங்கள் பெயரும் சேர்க்கலாம்.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <div class="form-card-head">
+      <h2>Free Counselling பெறுங்க</h2>
+      <p>எல்லா fields-ம் fill பண்ணுங்க — நாங்க soon-ல call பண்றோம்!</p>
+    </div>
+
+    <form id="ias-form" novalidate>
+      <div id="form-err" style="display:none;background:#fef2f2;border:1px solid #fca5a5;color:#991b1b;border-radius:6px;padding:12px 14px;margin-bottom:14px;font-size:.85rem">
+        Something went wrong. Please try again.
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>உங்கள் பெயர் *</label>
+          <input type="text" id="f_name" placeholder="Your Name" required/>
+        </div>
+        <div class="form-group">
+          <label>Mobile Number *</label>
+          <input type="tel" id="f_phone" placeholder="98XXX XXXXX" required/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email ID</label>
+        <input type="email" id="f_email" placeholder="yourname@email.com"/>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Qualification *</label>
+          <select id="f_type" required>
+            <option value="">Select</option>
+            <option>12th Completed</option>
+            <option>Degree (Ongoing)</option>
+            <option>Degree Completed</option>
+            <option>Post Graduate</option>
+            <option>Working Professional</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Attempt Status</label>
+          <select id="f_attempt">
+            <option value="">Select</option>
+            <option>First Attempt — Fresh</option>
+            <option>Already Appeared</option>
+            <option>Just Exploring</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="form-success"></div>
+
+      <button type="submit" id="submit-btn" class="submit-btn">
+        🎯 Free Counselling Book பண்ணுங்க →
+      </button>
+    </form>
+    <p class="form-note">🔒 உங்கள் details safe. No spam. No third-party sharing.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div style="text-align:center;max-width:540px;margin:0 auto;">
+    <p class="s-tag">FAQ</p>
+    <h2 class="s-head">அடிக்கடி கேட்கப்படும் <em>கேள்விகள்</em></h2>
+  </div>
+  <div class="faq-inner">
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Tamil medium students join பண்ணலாமா? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">ஆமா! நாங்க Tamil & English இரண்டு medium-லயும் coaching offer பண்றோம். Tamil medium students-க்கு special notes & separate batches உண்டு. மொழி தடையல்ல!</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Online classes available-ஆ? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">ஆமா! Live online classes, recorded sessions எல்லாம் available. Tamil Nadu வெளியே இருக்கவங்களும் easily join பண்ணலாம். Mobile-லயும் watch பண்ணலாம்.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">EMI option இருக்கா? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">ஆமா! 0% interest-ல 6–12 months EMI option available. UPI, Credit Card, Bank Transfer எல்லாம் accept பண்றோம். Financial burden இல்லாம படிக்கலாம்.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Working professionals join பண்ணலாமா? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">நிச்சயமா! Weekend batches & evening batches specifically working professionals-க்காக design பண்ணப்பட்டிருக்கு. Recorded lectures எல்லாம் available — உங்கள் schedule-க்கு ஏத்தமாதிரி படிக்கலாம்.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Hostel facility available-ஆ? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">ஆமா! Limited hostel facility available. Male & Female students-க்கு separate facilities. Early enrollment பண்ணுவோருக்கு priority கொடுக்கிறோம்.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Free counselling-ல என்ன கிடைக்கும்? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Free 30-min expert session, personalized study plan, course recommendation, syllabus overview, free study kit worth ₹3,999 — எதுவும் charge பண்ண மாட்டோம். No pressure, only guidance.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">EVA Stalin IAS Academy</div>
+      <p class="footer-brand-desc">Chennai's premier IAS coaching institute since 2009. Turning civil service dreams into reality — one student at a time.</p>
+      <div class="footer-contact">
+        <a href="tel:+919940332851">📞 99403 32851</a>
+        <a href="https://api.whatsapp.com/send?phone=919940332851" target="_blank">💬 WhatsApp Us</a>
+        <a href="#">📍 West Tambaram, Chennai – 600045</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Programs</h5>
+      <a href="#courses">Complete IAS Program</a>
+      <a href="#courses">Online IAS Program</a>
+      <a href="#courses">Prelims Crash Course</a>
+      <a href="#courses">CSAT Coaching</a>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <a href="#enroll">Free Counselling</a>
+      <a href="#courses">Courses</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 EVA Stalin IAS Academy. All Rights Reserved.</p>
+    <p class="footer-copy">Designed for IAS aspirants across Tamil Nadu & beyond.</p>
+  </div>
+</footer>
+
+<!-- STICKY BOTTOM BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-bar-text"><strong>New Batch</strong> — Limited seats filling fast!</div>
+  <a href="#enroll" class="sticky-bar-btn">Free Seat Secure பண்ணுங்க →</a>
+</div>
+
+<!-- WHATSAPP BUTTON -->
+<a href="https://api.whatsapp.com/send?phone=919940332851&text=Hi, I want to know about IAS Coaching" class="wa-btn" target="_blank" title="Chat on WhatsApp">💬</a>
+
+<script>
+/* ── STICKY BAR ── */
+window.addEventListener('scroll',function(){
+  document.getElementById('stickyBar').classList.toggle('show',window.scrollY>400);
+});
+
+/* ── FAQ TOGGLE ── */
+function toggleFaq(el){
+  const open=el.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!open)el.classList.add('open');
+}
+
+/* ── SCROLL REVEAL ── */
+const revealEls=document.querySelectorAll('.reveal,.reveal-left');
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.12});
+revealEls.forEach(el=>ro.observe(el));
+
+/* ── EMAIL JS CONFIG ── */
+const EMAILJS_KEY='DCmCpL5PT_kPUGpfQ';
+const EMAILJS_SVC='service_01yvrxv';
+const EMAILJS_TPL='template_dblirgv';
+const WA_NUMBER='919940332851';
+
+(function(){
+  const s=document.createElement('script');
+  s.src='https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+  s.onload=()=>emailjs.init({publicKey:EMAILJS_KEY});
+  document.head.appendChild(s);
+})();
+
+function getNow(){
+  const d=new Date();
+  return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})+
+         ' at '+d.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:true});
+}
+
+function sendWhatsApp(name,phone,email,qual,attempt,time){
+  const msg=encodeURIComponent(
+    `🏛️ *New IAS Counselling Enquiry*\n`+
+    `─────────────────────────\n`+
+    `👤 *Name:* ${name}\n`+
+    `📞 *Mobile:* ${phone}\n`+
+    `📧 *Email:* ${email||'Not provided'}\n`+
+    `🎓 *Qualification:* ${qual||'Not provided'}\n`+
+    `📋 *Attempt Status:* ${attempt||'Not provided'}\n`+
+    `📚 *Course:* UPSC IAS Coaching\n`+
+    `⏰ *Time:* ${time}\n`+
+    `─────────────────────────\n`+
+    `⚡ Please call within 24 hours.`
+  );
+  window.open(`https://api.whatsapp.com/send?phone=${WA_NUMBER}&text=${msg}`,'_blank');
+}
+
+document.getElementById('ias-form').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=document.getElementById('submit-btn');
+  const succ=document.getElementById('form-success');
+  const errBox=document.getElementById('form-err');
+
+  const name=document.getElementById('f_name').value.trim();
+  const phone=document.getElementById('f_phone').value.trim();
+  const email=document.getElementById('f_email').value.trim();
+  const qual=document.getElementById('f_type').value;
+  const attempt=document.getElementById('f_attempt').value;
+  const time=getNow();
+
+  if(!name){document.getElementById('f_name').style.borderColor='#ef4444';document.getElementById('f_name').focus();return;}
+  if(!/^[6-9]\d{9}$/.test(phone)){document.getElementById('f_phone').style.borderColor='#ef4444';document.getElementById('f_phone').focus();return;}
+  if(!qual){document.getElementById('f_type').style.borderColor='#ef4444';return;}
+
+  btn.innerHTML='Sending ⏳';btn.disabled=true;btn.style.opacity='.75';
+  errBox.style.display='none';
+
+  sendWhatsApp(name,phone,email,qual,attempt,time);
+
+  try{
+    await emailjs.send(EMAILJS_SVC,EMAILJS_TPL,{
+      name,email:'evastalin@gmail.com',
+      lead_name:name,lead_phone:phone,lead_email:email||'Not provided',
+      lead_type:qual,lead_city:attempt||'Not provided',
+      lead_course:'UPSC IAS Coaching',
+      lead_source:'Eva Stalin IAS Academy — Landing Page',
+      lead_time:time
+    });
+  }catch(err){console.warn('EmailJS:',err)}
+
+  succ.innerHTML=`
+    <div style="font-size:2rem;margin-bottom:10px">🏛️</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--terracotta);margin-bottom:8px">வாழ்த்துக்கள், ${name}!</div>
+    <div style="font-size:.88rem;color:var(--muted);line-height:1.7">
+      உங்கள் Free Counselling successfully book ஆச்சு!<br/>
+      24 மணி நேரத்தில் நாங்க call பண்றோம்.<br/><br/>
+      <strong style="color:var(--ink)">📞 99403 32851</strong>
+    </div>`;
+  succ.style.cssText='display:block;text-align:center;padding:24px;background:rgba(184,92,56,.08);border:1px solid rgba(184,92,56,.3);border-radius:8px;margin-top:16px';
+  this.querySelector('.submit-btn').style.display='none';
+  succ.scrollIntoView({behavior:'smooth',block:'center'});
+
+  if(typeof fbq!=='undefined')fbq('track','Lead');
+  if(typeof gtag!=='undefined')gtag('event','conversion');
+});
+
+['f_name','f_phone','f_type'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(el)el.addEventListener('input',()=>el.style.borderColor='');
+  if(el)el.addEventListener('change',()=>el.style.borderColor='');
+});
+</script>
+</body>
+</html>

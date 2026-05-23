@@ -1,0 +1,76 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 50px;
+
+    z-index: 1000;
+}
+
+img{
+    height: 60px;
+}
+
+button {
+    padding: 15px;
+    background: #12288b;
+    color: white;
+    border-radius: 10px;
+    transition:3s;
+}
+
+.glow-btn{
+    position: relative;
+    overflow: hidden;
+
+    padding: 15px 30px;
+    border: none;
+    background: darkred;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Glow Layer */
+.glow-btn::before{
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+
+    transition: 0.5s;
+}
+
+/* Hover Effect */
+.glow-btn:hover::before{
+    left: 100%;
+}
+
+@media(max-width:768px){
+
+    .glow-btn{
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+}

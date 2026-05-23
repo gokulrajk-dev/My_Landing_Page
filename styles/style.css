@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #dfdddd;
+}
+
+/* Navbar */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: white;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Hero */
+
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    padding: 15px 30px;
+    border: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Features */
+
+.features {
+    display: grid;
+    grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+    justify-content: center;
+    place-items:center;
+    gap: 30px;
+    padding: 80px 200px;
+    scroll-margin-top: 80px;
+}
+
+@media(max-width:992px){
+    .features{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+    .features{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.card {
+    background: white;
+    padding: 30px;
+    width: 250px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact */
+
+.contact {
+    background-color: red;
+    padding: 200px 20px;
+    scroll-margin-top: 80px;
+    text-align: center;
+}
+
+form {
+    width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input,
+textarea {
+    padding: 15px;
+}
+
+.buttons {
+    padding: 15px;
+    background: #12288b;
+    color: white;
+    border: none;
+}
+
