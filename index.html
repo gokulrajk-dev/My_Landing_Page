@@ -1310,7 +1310,7 @@
     /* ── WA BUTTON ── */
     .wa-btn {
       position: fixed;
-      bottom: 76px;
+      bottom: 85px;
       right: 20px;
       z-index: 300;
       width: 54px;
@@ -1489,6 +1489,9 @@
       .faq-inner {
         margin: 36px 0 0
       }
+
+      
+
     }
 
     @media(max-width:480px) {
@@ -1524,9 +1527,38 @@
       header.classList.add("scrolled");
     } else {
       ticker.classList.remove("hide");
-      header.classList.remove("scrolled"); 
+      header.classList.remove("scrolled");
     }
   });
+
+  function adjustWaBtn() {
+  const stickyBar = document.getElementById('stickyBar');
+  const waBtn = document.querySelector('.wa-btn');
+  
+  if (!stickyBar || !waBtn) return;
+
+  const isVisible = stickyBar.classList.contains('show');
+  
+  if (isVisible) {
+    const barHeight = stickyBar.offsetHeight; // real-time px height
+    waBtn.style.bottom = (barHeight + 12) + 'px'; // bar height + 12px gap
+  } else {
+    waBtn.style.bottom = '20px'; // when sticky bar is hidden
+  }
+}
+
+// Run on scroll (sticky bar shows/hides on scroll)
+window.addEventListener('scroll', function () {
+  const show = window.scrollY > 400;
+  document.getElementById('stickyBar').classList.toggle('show', show);
+  adjustWaBtn(); // recalculate every time bar toggles
+});
+
+// Run on resize (mobile/desktop switch)
+window.addEventListener('resize', adjustWaBtn);
+
+// Run on page load
+window.addEventListener('load', adjustWaBtn);
 </script>
 
 <body>
@@ -2007,7 +2039,7 @@
 
   <!-- WHATSAPP BUTTON -->
   <a href="https://api.whatsapp.com/send?phone=919940332851&text=Hi, I want to know about IAS Coaching" class="wa-btn"
-    target="_blank" title="Chat on WhatsApp"><img src="images\image.png"/></a>
+    target="_blank" title="Chat on WhatsApp"><img src="images\image.png" /></a>
 
   <script>
     /* ── STICKY BAR ── */
